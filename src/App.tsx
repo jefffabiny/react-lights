@@ -2,13 +2,21 @@ import { useState } from "react";
 import "./App.css";
 
 import Lights from "./components/Lights";
+import Speed from "./components/Speed";
+import Svg from "./components/SVG";
 
 function App() {
-  let [delay, setDelay] = useState(1);
+  let [speed, setSpeed] = useState(3);
+
+  function handleSpeedChange() {
+    console.log("test");
+  }
 
   return (
     <div className="App">
-      <Lights />
+      <Speed handleSpeedChange={handleSpeedChange} />
+      <Lights speed={speed} />
+      <Svg />
     </div>
   );
 }
